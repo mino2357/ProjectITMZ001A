@@ -1,0 +1,17 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: build
+      run: g++ main.cpp
+    - name: run
+      run: ./a.out
+    - name: delete a.out
+      run: rm a.out
